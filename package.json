@@ -1,0 +1,29 @@
+{
+  "name": "verifier",
+  "version": "1.0.0",
+  "description": "이메일 인증을 간편하게 구현할 수 있는 모듈입니다.",
+  "main": "src/verify.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/onion8513/verifier.git"
+  },
+  "author": "Sopnei",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/onion8513/verifier/issues"
+  },
+  "homepage": "https://github.com/onion8513/verifier#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "nodemailer": "^6.6.3",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "@types/node": "^16.4.6",
+    "@types/nodemailer": "^6.4.4",
+    "typescript": "^4.3.5"
+  }
+}
