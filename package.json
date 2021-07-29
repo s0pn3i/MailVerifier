@@ -1,6 +1,6 @@
 {
   "name": "mailverifier",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "이메일 인증을 간편하게 구현할 수 있는 모듈입니다.",
   "main": "src/verifier/index.ts",
   "scripts": {
