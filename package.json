@@ -1,5 +1,5 @@
 {
-  "name": "verifier-js",
+  "name": "verifier",
   "version": "1.0.0",
   "description": "이메일 인증을 간편하게 구현할 수 있는 모듈입니다.",
   "main": "src/verfier/index.ts",
