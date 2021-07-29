@@ -2,20 +2,12 @@ import path from 'path'
 import dotenv from 'dotenv'
 dotenv.config({ path: path.resolve(__dirname, '../../.env') })
 import nodemailer, { SendMailOptions } from 'nodemailer'
-import createVerifyNumber from '../createVerifyNumber'
+import createVerifyNumber from '../../createVerifyNumber'
 const verify = async (email: string, from: string) => {
   const emailRule =
     /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i
-  if (!email || !from) {
-    return {
-      ok: false,
-      error: 'Please fill in the required fields.'
-    }
-  } else if (!emailRule.test(email)) {
-    return {
-      ok: false,
-      error: 'Email format is incorrect.'
-    }
+  if (!emailRule.test(email)) {
+    throw new Error('Email format is incorrect.')
   }
   const verifyNumber = createVerifyNumber()
   const transport = nodemailer.createTransport({
@@ -45,15 +37,10 @@ const verify = async (email: string, from: string) => {
   try {
     await transport.sendMail(mailOptions)
     return {
-      ok: true,
       verifyNumber
     }
   } catch (error) {
-    console.log(error)
-    return {
-      ok: false,
-      error: String(error)
-    }
+    throw new Error(String(error))
   }
 }
 
